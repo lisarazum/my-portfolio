@@ -1,0 +1,17 @@
+:root {
+  // base
+  --font-family: "Overpass", sans-serif;
+  --content-width: 1170px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --white-color: #FFFFFF;
+  --text-color: #E4E4E4;
+  --orange-gradient-color: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  --orange-color: #E29500; 
+  --green-back-color: #14555B;
+  --green-color: rgba(14, 154, 167, 0.37);
+  --black-back-color: #2C2C2C;
+  --black-color: #161616;
+}

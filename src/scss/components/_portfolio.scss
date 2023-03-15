@@ -1,0 +1,48 @@
+.portfolio {
+  &__img {
+    margin-bottom: 20px;
+    height: 240px;
+    object-fit: contain;
+
+    @include small-tablet {
+      height: 180px;
+    }
+  }
+
+  &__slider-next {
+    right: -4px;
+  }
+
+  &__slider-prev {
+    left: -4px;
+  }
+
+  & .section__title {
+    @include mobile {
+      left: 10%;
+      width: 80%;
+    }
+  }
+}
+
+.small-projects {
+  &__slider {
+    @include mobile {
+      padding-top: 95px;
+    }
+
+    &-btns {
+      @include mobile {
+        top: 50px;
+      }
+    }
+  }
+  &__block {
+    padding: 30px;
+    min-height: 370px;
+    max-height: 400px;
+  }
+  &__img {
+    height: 160px;
+  }
+}

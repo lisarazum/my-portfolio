@@ -1,0 +1,283 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  position: relative;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.paragraph {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.black-back {
+  background-color: var(--black-back-color);
+}
+
+.green-back {
+  background-color: var(--black-back-color);
+  background: var(--green-back-color);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(44, 44, 44, 0.5);
+  z-index: -1;
+  transition: all .2s ease-in-out;
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+.contact-btn {
+  padding: 11px 40px;
+  min-width: 180px;
+  font-weight: 700;
+  color: var(--white-color);
+  text-align: center;
+  background: var(--green-back-color);
+  border-radius: 6px;
+  box-shadow: 0px 2px 13px rgba(226, 158, 0, 0.48);
+  transition: all .3s ease-in-out;
+
+  @include for-desktop {
+    &:hover {
+      background: #F6CD61;
+    }
+  }
+  @include tablet {
+    padding: 8px 20px;
+    min-width: 140px;
+    order: 1;
+  }
+}
+
+.section {
+  padding: 50px 0;
+  @include tablet {
+    padding: 30px 0;
+  }
+}
+
+.section__title {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 1.2;
+  color: var(--white-color);
+  text-align: center;
+
+  @include tablet {
+    margin-bottom: 10px;
+    font-size: 36px;
+  }
+
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+.swiper {
+  margin-right: -29px;
+  margin-left: -25px;
+  padding-right: 31px;
+  padding-left: 25px;
+
+  @include big-desktop {
+    margin: 0;
+    padding: 0;
+    padding-top: 85px;
+  }
+  @include mobile {
+    padding-top: 65px;
+  }
+
+  &-slide {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 30px;
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      min-height: 511px;
+      padding: 45px;
+      @include big-desktop {
+        padding: 30px;
+        min-height: 450px;
+      }
+
+      @include small-tablet {
+        padding: 20px;
+        min-height: 400px;
+      }
+    }
+    &-paragraph {
+      margin-bottom: auto;
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--black-color);
+
+      @include small-tablet {
+        font-size: 16px;
+      }
+    }
+    &-link {
+      display: inline-block;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--black-color);
+      border: 2px solid #0E9AA7;
+      border-radius: 6px;
+      text-align: center;
+      transition: all .3s ease-in-out;
+  
+      @include for-desktop {
+        &:hover {
+          background-color: #0E9AA7;
+          color: var(--white-color);
+        }
+      }
+
+      @include small-tablet {
+        font-size: 16px;
+      }
+    }
+  }
+  &-btn {
+    color: #0E9AA7;
+    &::after {
+      font-size: 30px;
+      @include tablet {
+        font-size: 27px;
+      }
+      @include mobile {
+        font-size: 22px;
+      }
+    }
+    &--green {
+      color: var(--black-color);
+    }
+  }
+}
+
+.slider {
+  &-section {
+    @include big-desktop {
+      position: relative;
+      & .section__title {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      & .section__title {
+        top: 46px;
+      }
+    }
+  }
+
+  &-btns {
+    @include big-desktop {
+      position: absolute;
+      top: 11px;
+      right: 0;
+      display: block;
+      width: 95px;
+      height: 37px;
+    }
+    @include tablet {
+      top: 18px;
+    }
+    @include mobile {
+      top: 17px;
+      width: 56px;
+      height: 27px;
+    }
+  }
+}

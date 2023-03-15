@@ -1,0 +1,128 @@
+.footer {
+  &__block {
+    display: flex;
+
+    @include small-tablet {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    @include small-tablet {
+      margin-right: auto;
+      width: 30%;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--text-color);
+    transition: all .3s ease-in-out;
+
+    @include for-desktop {
+      &:hover {
+        color: var(--orange-color);
+      }
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &-contact {
+    margin-right: auto;
+    max-height: 150px;
+
+    @include small-tablet {
+      margin-right: 0;
+      width: 40%;
+      max-height: fit-content;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 82%;
+      @include small-tablet {
+        height: 100%;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+
+      &:not(:nth-child(n+3)) {
+        margin-right: 20px;
+        @include small-tablet {
+          margin-right: 0;
+        }
+      }
+      &:not(:nth-child(2n)) {
+        margin-bottom: 20px;
+        @include small-tablet {
+          margin-bottom: 10px;
+        }
+      }
+
+      @include for-desktop {
+        &:hover .footer-contact__img svg {
+          fill: var(--orange-color);
+        }
+      }
+    }
+
+    &__img {
+      margin-right: 9px;
+      width: 36px;
+      height: 36px;
+      & svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--green-color);
+        transition: all .3s ease-in-out;
+      }
+
+      @include mobile {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  &-copyright {
+    display: flex;
+    align-self: flex-end;
+
+    @include small-tablet {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
