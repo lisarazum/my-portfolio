@@ -1,17 +1,6 @@
 :root {
-  // base
   --font-family: "Overpass", sans-serif;
   --content-width: 1170px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-
-  // colors
-  --white-color: #FFFFFF;
-  --text-color: #E4E4E4;
-  --yellow-color: #FEF19A;
-  --green-back-color: #14555B;
-  --green-color: rgba(14, 154, 167, 0.37);
-  --blue-color: #2F5874;
-  --black-back-color: #2C2C2C;
-  --black-color: #161616;
 }

@@ -1,48 +1,122 @@
 .portfolio {
-  &__img {
-    margin-bottom: 20px;
-    height: 240px;
-    object-fit: contain;
+	padding: 50px 0;
+  @include tablet {
+    padding: 30px 0;
+  }
 
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__item {
+		position: relative;
+		margin-bottom: 30px;
+		width: 30%;
+		max-width: 350px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
     @include small-tablet {
-      height: 180px;
+      width: 48%;
+      margin-bottom: 10px;
     }
-  }
+	}
 
-  &__slider-next {
-    right: -4px;
-  }
+	&__image-link {
+		position: relative;
+	}
 
-  &__slider-prev {
-    left: -4px;
-  }
+	&__links {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px;
+		width: 100%;
+		height: 97%;
+		background-color: rgba(44, 44, 44, 0.7);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(-100%);
+		z-index: -1;
+		transition: all 0.3s ease;
 
-  & .section__title {
+    @include tablet {
+      position: relative;
+      margin-top: 5px;
+      padding: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 50px;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+      transform: translateX(0);
+    }
+    @include small-tablet {
+      min-height: 40px;
+    }
     @include mobile {
-      left: 10%;
-      width: 80%;
+      min-height: 30px;
     }
-  }
-}
 
-.small-projects {
-  &__slider {
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			z-index: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 7px 4px 4px;
+		font-size: 18px;
+		color: #fff;
+		text-align: center;
+		border: 1px solid transparent;
+		border-radius: 10px;
+		transition: all 0.3s ease;
+
+    @include tablet {
+      padding: 0;
+    }
+    @include small-tablet {
+      font-size: 16px;
+    }
     @include mobile {
-      padding-top: 95px;
+      font-size: 14px;
     }
 
-    &-btns {
-      @include mobile {
-        top: 50px;
+		&:not(:last-child) {
+			margin-right: 20px;
+      @include tablet {
+        margin-right: 0;
       }
-    }
-  }
-  &__block {
-    padding: 30px;
-    min-height: 370px;
-    max-height: 400px;
-  }
-  &__img {
-    height: 160px;
-  }
+		}
+
+		& span {
+			margin-left: 4px;
+			transition: all 0.2s ease;
+		}
+
+		&:hover {
+			background-color: #fff;
+			color: #2372A8;
+
+			& span {
+				color: #2372A8;
+				transform: translateX(4px);
+			}
+		}
+	}
 }

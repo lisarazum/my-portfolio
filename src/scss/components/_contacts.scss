@@ -1,0 +1,87 @@
+.contacts {
+	position: relative;
+	padding: 50px 0;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -130px;
+		right: 0;
+		display: block;
+		width: 900px;
+		height: 380px;
+		background-image: url("../img/background.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		transform: rotate(180deg);
+
+    @include tablet {
+      top: -20px;
+      width: 550px;
+      height: 213px;
+    }
+    @include small-tablet {
+      top: 74px;
+      width: 433px;
+      height: 162px;
+    }
+    @include mobile {
+      display: none;
+    }
+	}
+	&__paragraph {
+		margin-bottom: 20px;
+		font-size: 18px;
+		text-align: center;
+		color: #fff;
+
+    @include mobile {
+      font-size: 14px;
+    }
+	}
+
+	&__block {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		width: 200px;
+	}
+
+	&__item {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		color: #fff;
+		transition: all 0.3s ease;
+
+		& .svg {
+			margin-right: 10px;
+			height: 36px;
+			max-width: 40px;
+			fill: #fff;
+			transition: all 0.3s ease;
+
+      @include mobile {
+        height: 28px;
+      }
+		}
+    
+		&:hover {
+			color: #2372A8;
+			.svg {
+				fill: #2372A8;
+			}
+		}
+	}
+}

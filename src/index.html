@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="page">
 
-@include('partials/head.html')
+  @include('partials/page-blocks/head.html')
 
 <body class="page__body">
   <div class="site-container">
-    @include('partials/header.html')
+    @include('partials/page-blocks/header.html')
     <main class="main">
       @include('partials/hero.html')
       @include('partials/about.html')
       @include('partials/portfolio.html')
       @include('partials/smallprojects.html')
+      @include('partials/contacts.html')
     </main>
-    @include('partials/footer.html')
-    <div class="overlay" data-menu-overlay></div>
-
-    <div id="arrowTop" hidden></div>
-
+    @include('partials/page-blocks/footer.html')
   </div>
+  <div class="overlay" data-menu-overlay></div>
 </body>
-
 </html>

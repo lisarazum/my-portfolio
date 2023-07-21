@@ -1,148 +1,42 @@
 .footer {
-  &__block {
-    display: flex;
+	padding: 20px 0;
+	background-color: #2372A8;
 
-    @include small-tablet {
+	&__list {
+		display: flex;
+		align-items: center;
+
+    @include mobile {
+      flex-wrap: wrap;
       justify-content: space-between;
-      flex-wrap: wrap;
     }
-  }
+	}
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    @include small-tablet {
-      margin-right: auto;
-      width: 30%;
-    }
-    @include mobile {
-      margin-bottom: 30px;
-      width: 100%;
-    }
-
-    &._active {
-      & .footer__item {
-        opacity: 1;
-        transform: translate(0, 0);
-      }
-      & .footer__item:nth-child(1) {
-        transition: all .4s ease 0s;
-      }
-      & .footer__item:nth-child(2) {
-        transition: all .4s ease 0.2s;
-      }
-      & .footer__item:nth-child(3) {
-        transition: all .4s ease 0.4s;
-      }
-    }
-  }
-
-  &__item {
+	&__item {
     &:not(:last-child) {
-      margin-bottom: 18px;
+      margin-right: 15px;
+
+      @include mobile {
+        margin-right: 0;
+      }
     }
 
-    opacity: 0;
-    transform: translate(-120%, 0);
-    transition: all .3s ease 0;
-  }
+    & a {
+      font-size: 18px;
+      color: #fff;
+      transition: all .3s ease;
 
-  &__link {
-    font-size: 18px;
-    line-height: 1.2;
-    color: var(--text-color);
-    transition: all .3s ease-in-out;
-
-    @include for-desktop {
       &:hover {
-        color: var(--yellow-color);
+        color: #FEF19A;
       }
-    }
 
-    @include mobile {
-      font-size: 14px;
-    }
-  }
-
-  &__title {
-    margin-bottom: 15px;
-  }
-
-  &-contact {
-    margin-right: auto;
-    max-height: 150px;
-
-    @include small-tablet {
-      margin-right: 0;
-      width: 40%;
-      max-height: fit-content;
-    }
-    @include mobile {
-      margin-bottom: 30px;
-      width: 100%;
-    }
-
-    &__list {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: 82%;
       @include small-tablet {
-        height: 100%;
-      }
-    }
-
-    &__link {
-      display: flex;
-      align-items: center;
-
-      &:not(:nth-child(n+3)) {
-        margin-right: 20px;
-        @include small-tablet {
-          margin-right: 0;
-        }
-      }
-      &:not(:nth-child(2n)) {
-        margin-bottom: 20px;
-        @include small-tablet {
-          margin-bottom: 10px;
-        }
-      }
-
-      @include for-desktop {
-        &:hover .footer-contact__img svg {
-          fill: var(--yellow-color);
-        }
-      }
-    }
-
-    &__img {
-      margin-right: 9px;
-      width: 36px;
-      height: 36px;
-      & svg {
-        width: 100%;
-        height: 100%;
-        fill: var(--blue-color);
-        transition: all .3s ease-in-out;
+        font-size: 16px;
       }
 
       @include mobile {
-        width: 28px;
-        height: 28px;
+        font-size: 14px;
       }
-    }
-  }
-
-  &-copyright {
-    display: flex;
-    align-self: flex-end;
-
-    @include small-tablet {
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
+    } 
   }
 }

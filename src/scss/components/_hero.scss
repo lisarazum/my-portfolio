@@ -1,16 +1,27 @@
 .hero {
-  padding: 30px 0;
+	display: flex;
+	align-items: center;
+	padding: 30px 0;
+	min-height: calc(100vh - 80px);
 
-  &__container {
-    display: flex;
-    align-items: center;
+  @include tablet {
+    min-height: unset;
+  }
+
+	&-main {
+		display: flex;
+		width: 100%;
+
     @include tablet {
       flex-direction: column;
     }
-  }
+	}
 
-  &__block {
-    width: 60%;
+	&__block {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 60%;
 
     @include tablet {
       width: 100%;
@@ -18,31 +29,21 @@
     @include mobile {
       margin-bottom: 20px;
     }
-  }
+	}
 
-  &__title {
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-size: 72px;
-    line-height: 1.2;
-    color: var(--white-color);
-    transform: translateY(120%);
-    opacity: 0;
-    transition: all .4s ease;
-
-    &._active {
-      transform: translateY(0);
-      opacity: 1;
-    }
+	&__title {
+		margin-bottom: 30px;
+		font-weight: 400;
+		font-size: 72px;
+		line-height: 1.2;
+		color: #fff;
 
     @include big-desktop {
       font-size: 65px;
     }
-
     @include tablet {
       font-size: 56px;
     }
-
     @include small-tablet {
       margin-bottom: 5px;
       font-size: 48px;
@@ -50,23 +51,15 @@
     @include mobile {
       font-size: 32px;
     }
-  }
+	}
 
-  &__paragraph {
-    margin-bottom: 30px;
-    width: 61%;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-    color: var(--white-color);
-    transform: translateY(-120%);
-    opacity: 0;
-    transition: all .4s ease 0.4s;
-
-    &._active {
-      transform: translateY(0);
-      opacity: 1;
-    }
+	&__paragraph {
+		margin-bottom: 30px;
+		width: 61%;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 150%;
+		color: #fff;
 
     @include tablet {
       width: 400px;
@@ -77,32 +70,35 @@
     }
     @include mobile {
       width: 100%;
-      font-size: 14px;
+	    font-size: 14px;
     }
-  }
+	}
 
-  &__contact {
-    transform: translateY(-120%);
-    opacity: 0;
-    &._anim-items {
-      transition: all .4s ease;
-
-      &._active {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
+	&__link {
+		display: block;
+		padding: 11px 40px;
+		max-width: 180px;
+		font-weight: 700;
+		color: #fff;
+		text-align: center;
+		background: #2372A8;
+		border-radius: 6px;
+		transition: all 0.3s ease;
 
     @include mobile {
-      display: inline-block;
       width: 100%;
-      text-align: center;
+      max-width: unset;
     }
-  }
 
-  &__back {
-    position: relative;
-    margin-right: -5vw;
+		&:hover {
+			color: #2C2C2C;
+			background-color: #FEF19A;
+		}
+	}
+
+	&__back {
+		position: relative;
+		margin-right: -5vw;
 
     @include big-desktop {
       margin-right: 30px;
@@ -119,34 +115,35 @@
     }
     @include small-tablet {
       justify-content: center;
+      margin: 0 auto;
       margin-right: 0;
       height: 300px;
     }
     @include mobile {
       height: 300px;
     }
-    @media (max-width: 420px) {
+    @media(max-width: 420px) {
       width: 280px;
       height: 280px;
     }
-  }
+	}
 
   &__img {
     @include tablet {
       height: 480px;
     }
-    @include small-tablet {
+    @include mobile {
       height: 100%;
     }
   }
 
-  &__me-img {
-    position: absolute;
-    top: 0;
-    left: 1%;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+	&__me-img {
+		position: absolute;
+		top: 0;
+		left: 1%;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
 
     @include tablet {
       width: 400px;
@@ -155,7 +152,6 @@
       left: unset;
       right: 39px;
     }
-
     @include small-tablet {
       width: 100%;
       height: 100%;
@@ -163,204 +159,246 @@
       right: 0;
       object-fit: contain;
     }
+    @include mobile {
+      height: 300px;
+    }
+    @media(max-width: 420px) {
+      width: 280px;
+      height: 280px;
+    }
+	}
+
+	& svg {
+		position: absolute;
+		top: 49px;
+		left: 9px;
+		width: 560px;
+		height: 560px;
+	}
+
+	&__circle-1, &__circle-2, &__circle-3, &__circle-4, &__circle-5 {
+		position: absolute;
+		top: 1%;
+		left: 0;
+		width: 70px;
+		height: 70px;
+
+    @include big-desktop {
+      width: 60px;
+      height: 60px;
+    }
+    @include tablet {
+      right: 0;
+      top: 0;
+    }
+    @include small-tablet {
+      width: 40px;
+      height: 40px;
+    }
+    @media(max-width: 420px) {
+      width: 36px;
+      height: 36px;
+    }
+	}
+
+	&__circle-1 {
+		offset-path: path("M560 283C560 439.297 434.64 566 280 566C125.36 566 0 439.297 0 283C0 126.703 125.36 0 280 0C434.64 0 560 126.703 560 283Z");
+		offset-distance: 0;
+		animation: move 10s linear infinite;
+
+    @include big-desktop {
+      offset-path: path("M380 190C380 294.934 294.934 380 190 380C85.0659 380 0 294.934 0 190C0 85.0659 85.0659 0 190 0C294.934 0 380 85.0659 380 190Z");
+    }
+    @include tablet {
+      offset-path: path("M480 240C480 372.548 372.548 480 240 480C107.452 480 0 372.548 0 240C0 107.452 107.452 0 240 0C372.548 0 480 107.452 480 240Z");
+    }
+    @include small-tablet {
+      offset-path: path("M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z");
+    }
+    @media(max-width: 420px) {
+      offset-path: path("M280 140C280 217.32 217.32 280 140 280C62.6801 280 0 217.32 0 140C0 62.6801 62.6801 0 140 0C217.32 0 280 62.6801 280 140Z");
+    }
+	}
+
+	&__circle-2 {
+		offset-path: path("M560 283C560 439.297 434.64 566 280 566C125.36 566 0 439.297 0 283C0 126.703 125.36 0 280 0C434.64 0 560 126.703 560 283Z");
+		offset-distance: 50%;
+		animation: move2 10s linear infinite;
+
+    @include big-desktop {
+      offset-path: path("M380 190C380 294.934 294.934 380 190 380C85.0659 380 0 294.934 0 190C0 85.0659 85.0659 0 190 0C294.934 0 380 85.0659 380 190Z");
+    }
+    @include tablet {
+      offset-path: path("M480 240C480 372.548 372.548 480 240 480C107.452 480 0 372.548 0 240C0 107.452 107.452 0 240 0C372.548 0 480 107.452 480 240Z");
+    }
+    @include small-tablet {
+      offset-path: path("M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z");
+    }
+    @media(max-width: 420px) {
+      offset-path: path("M280 140C280 217.32 217.32 280 140 280C62.6801 280 0 217.32 0 140C0 62.6801 62.6801 0 140 0C217.32 0 280 62.6801 280 140Z");
+    }
+	}
+
+	&__circle-5 {
+		offset-path: path("M560 283C560 439.297 434.64 566 280 566C125.36 566 0 439.297 0 283C0 126.703 125.36 0 280 0C434.64 0 560 126.703 560 283Z");
+		offset-distance: 30%;
+		animation: move5 10s linear infinite;
+
+    @include big-desktop {
+      offset-path: path("M380 190C380 294.934 294.934 380 190 380C85.0659 380 0 294.934 0 190C0 85.0659 85.0659 0 190 0C294.934 0 380 85.0659 380 190Z");
+    }
+    @include tablet {
+      offset-path: path("M480 240C480 372.548 372.548 480 240 480C107.452 480 0 372.548 0 240C0 107.452 107.452 0 240 0C372.548 0 480 107.452 480 240Z");
+    }
+    @include small-tablet {
+      offset-path: path("M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z");
+    }
+    @media(max-width: 420px) {
+      offset-path: path("M280 140C280 217.32 217.32 280 140 280C62.6801 280 0 217.32 0 140C0 62.6801 62.6801 0 140 0C217.32 0 280 62.6801 280 140Z");
+    }
+	}
+	&__circle-3 {
+		top: 12%;
+		left: 12%;
+		offset-path: path("M427 213C427 330.637 331.413 426 213.5 426C95.5872 426 0 330.637 0 213C0 95.3633 95.5872 0 213.5 0C331.413 0 427 95.3633 427 213Z");
+		offset-distance: 10%;
+		animation: move3 12s linear infinite;
+
+    @include big-desktop {
+      offset-path: path("M320 160C320 248.366 248.366 320 160 320C71.6344 320 0 248.366 0 160C0 71.6344 71.6344 0 160 0C248.366 0 320 71.6344 320 160Z");
+    }
+    @include tablet {
+      offset-path: path("M360 180C360 279.411 279.411 360 180 360C80.5887 360 0 279.411 0 180C0 80.5887 80.5887 0 180 0C279.411 0 360 80.5887 360 180Z");
+    }
+    @include small-tablet {
+      offset-path: path("M220 110C220 170.751 170.751 220 110 220C49.2487 220 0 170.751 0 110C0 49.2487 49.2487 0 110 0C170.751 0 220 49.2487 220 110Z");
+    }
+    @media(max-width: 420px) {
+      offset-path: path("M210 105C210 162.99 162.99 210 105 210C47.0101 210 0 162.99 0 105C0 47.0101 47.0101 0 105 0C162.99 0 210 47.0101 210 105Z");
+    }
+	}
+	&__circle-4 {
+		top: 12%;
+		left: 12%;
+		offset-path: path("M427 213C427 330.637 331.413 426 213.5 426C95.5872 426 0 330.637 0 213C0 95.3633 95.5872 0 213.5 0C331.413 0 427 95.3633 427 213Z");
+		offset-distance: 70%;
+		animation: move4 12s linear infinite;
+
+    @include big-desktop {
+      offset-path: path("M320 160C320 248.366 248.366 320 160 320C71.6344 320 0 248.366 0 160C0 71.6344 71.6344 0 160 0C248.366 0 320 71.6344 320 160Z");
+    }
+    @include tablet {
+      offset-path: path("M360 180C360 279.411 279.411 360 180 360C80.5887 360 0 279.411 0 180C0 80.5887 80.5887 0 180 0C279.411 0 360 80.5887 360 180Z");
+    }
+    @include small-tablet {
+      offset-path: path("M220 110C220 170.751 170.751 220 110 220C49.2487 220 0 170.751 0 110C0 49.2487 49.2487 0 110 0C170.751 0 220 49.2487 220 110Z");
+    }
+    @media(max-width: 420px) {
+      offset-path: path("M210 105C210 162.99 162.99 210 105 210C47.0101 210 0 162.99 0 105C0 47.0101 47.0101 0 105 0C162.99 0 210 47.0101 210 105Z");
+    }
+	}
+}
+
+@media (max-width: 1024px) {
+  .hero__circle-1, .hero__circle-2, .hero__circle-5 {
+    top: -20%;
+    left: unset;
+    right: 421px;
   }
-
-  & svg {
-    position: absolute;
-    top: 49px;
-    left: 9px;
-    width: 560px;
-    height: 560px;
+}
+@media (max-width: 768px) {
+  .hero__circle-1, .hero__circle-2, .hero__circle-5 {
+    top: 0;
+    right: 66%;
   }
-
-  &__circle {
-    &-1,
-    &-2,
-    &-3,
-    &-4,
-    &-5 {
-      position: absolute;
-      top: 1%;
-      left: 0;
-      width: 70px;
-      height: 70px;
-      @include big-desktop {
-        width: 60px;
-        height: 60px;
-      }
-      @include tablet {
-        right: 0;
-        top: 0;
-      }
-      @include small-tablet {
-        width: 40px;
-        height: 40px;
-      }
-      @media (max-width: 420px) {
-        width: 36px;
-        height: 36px;
-      }
-    }
-
-    &-1 {
-      offset-path: path('M560 283C560 439.297 434.64 566 280 566C125.36 566 0 439.297 0 283C0 126.703 125.36 0 280 0C434.64 0 560 126.703 560 283Z');
-      offset-distance: 0;
-      animation: move 10s linear infinite;
-      @include big-desktop {
-        offset-path: path('M380 190C380 294.934 294.934 380 190 380C85.0659 380 0 294.934 0 190C0 85.0659 85.0659 0 190 0C294.934 0 380 85.0659 380 190Z');
-      }
-      @include tablet {
-        offset-path: path('M480 240C480 372.548 372.548 480 240 480C107.452 480 0 372.548 0 240C0 107.452 107.452 0 240 0C372.548 0 480 107.452 480 240Z');
-      }
-      @include small-tablet {
-        offset-path: path('M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z');
-      }
-      @media (max-width: 420px) {
-        offset-path: path('M280 140C280 217.32 217.32 280 140 280C62.6801 280 0 217.32 0 140C0 62.6801 62.6801 0 140 0C217.32 0 280 62.6801 280 140Z');
-      }
-    }
-    &-2 {
-      offset-path: path('M560 283C560 439.297 434.64 566 280 566C125.36 566 0 439.297 0 283C0 126.703 125.36 0 280 0C434.64 0 560 126.703 560 283Z');
-      offset-distance: 50%;
-      animation: move2 10s linear infinite;
-      @include big-desktop {
-        offset-path: path('M380 190C380 294.934 294.934 380 190 380C85.0659 380 0 294.934 0 190C0 85.0659 85.0659 0 190 0C294.934 0 380 85.0659 380 190Z');
-      }
-      @include tablet {
-        offset-path: path('M480 240C480 372.548 372.548 480 240 480C107.452 480 0 372.548 0 240C0 107.452 107.452 0 240 0C372.548 0 480 107.452 480 240Z');
-      }
-      @include small-tablet {
-        offset-path: path('M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z');
-      }
-      @media (max-width: 420px) {
-        offset-path: path('M280 140C280 217.32 217.32 280 140 280C62.6801 280 0 217.32 0 140C0 62.6801 62.6801 0 140 0C217.32 0 280 62.6801 280 140Z');
-      }
-    }
-    &-5 {
-      offset-path: path('M560 283C560 439.297 434.64 566 280 566C125.36 566 0 439.297 0 283C0 126.703 125.36 0 280 0C434.64 0 560 126.703 560 283Z');
-      offset-distance: 30%;
-      animation: move5 10s linear infinite;
-      @include big-desktop {
-        offset-path: path('M380 190C380 294.934 294.934 380 190 380C85.0659 380 0 294.934 0 190C0 85.0659 85.0659 0 190 0C294.934 0 380 85.0659 380 190Z');
-      }
-      @include tablet {
-        offset-path: path('M480 240C480 372.548 372.548 480 240 480C107.452 480 0 372.548 0 240C0 107.452 107.452 0 240 0C372.548 0 480 107.452 480 240Z');
-      }
-      @include small-tablet {
-        offset-path: path('M300 150C300 232.843 232.843 300 150 300C67.1573 300 0 232.843 0 150C0 67.1573 67.1573 0 150 0C232.843 0 300 67.1573 300 150Z');
-      }
-      @media (max-width: 420px) {
-        offset-path: path('M280 140C280 217.32 217.32 280 140 280C62.6801 280 0 217.32 0 140C0 62.6801 62.6801 0 140 0C217.32 0 280 62.6801 280 140Z');
-      }
-    }
-
-    &-1,
-    &-2,
-    &-5 {
-      @include tablet {
-        top: -20%;
-        left: unset;
-        right: 421px;
-      }
-      @include small-tablet {
-        top: 0;
-        right: 66%;
-      }
-      @include mobile {
-        right: 70%;
-      }
-      @media (max-width: 500px) {
-        right: 75%;
-      }
-      @media (max-width: 420px) {
-        right: 87%;
-      }
-    }
-
-    &-3 {
-      top: 12%;
-      left: 12%;
-      offset-path: path('M427 213C427 330.637 331.413 426 213.5 426C95.5872 426 0 330.637 0 213C0 95.3633 95.5872 0 213.5 0C331.413 0 427 95.3633 427 213Z');
-      offset-distance: 10%;
-      animation: move3 12s linear infinite;
-      @include big-desktop {
-        offset-path: path('M320 160C320 248.366 248.366 320 160 320C71.6344 320 0 248.366 0 160C0 71.6344 71.6344 0 160 0C248.366 0 320 71.6344 320 160Z');
-      }
-      @include tablet {
-        offset-path: path('M360 180C360 279.411 279.411 360 180 360C80.5887 360 0 279.411 0 180C0 80.5887 80.5887 0 180 0C279.411 0 360 80.5887 360 180Z');
-      }
-      @include small-tablet {
-        offset-path: path('M220 110C220 170.751 170.751 220 110 220C49.2487 220 0 170.751 0 110C0 49.2487 49.2487 0 110 0C170.751 0 220 49.2487 220 110Z');
-      }
-      @media (max-width: 420px) {
-        offset-path: path('M210 105C210 162.99 162.99 210 105 210C47.0101 210 0 162.99 0 105C0 47.0101 47.0101 0 105 0C162.99 0 210 47.0101 210 105Z');
-      }
-    }
-    &-4 {
-      top: 12%;
-      left: 12%;
-      offset-path: path('M427 213C427 330.637 331.413 426 213.5 426C95.5872 426 0 330.637 0 213C0 95.3633 95.5872 0 213.5 0C331.413 0 427 95.3633 427 213Z');
-      offset-distance: 70%;
-      animation: move4 12s linear infinite;
-      @include big-desktop {
-        offset-path: path('M320 160C320 248.366 248.366 320 160 320C71.6344 320 0 248.366 0 160C0 71.6344 71.6344 0 160 0C248.366 0 320 71.6344 320 160Z');
-      }
-      @include tablet {
-        offset-path: path('M360 180C360 279.411 279.411 360 180 360C80.5887 360 0 279.411 0 180C0 80.5887 80.5887 0 180 0C279.411 0 360 80.5887 360 180Z');
-      }
-      @include small-tablet {
-        offset-path: path('M220 110C220 170.751 170.751 220 110 220C49.2487 220 0 170.751 0 110C0 49.2487 49.2487 0 110 0C170.751 0 220 49.2487 220 110Z');
-      }
-      @media (max-width: 420px) {
-        offset-path: path('M210 105C210 162.99 162.99 210 105 210C47.0101 210 0 162.99 0 105C0 47.0101 47.0101 0 105 0C162.99 0 210 47.0101 210 105Z');
-      }
-    }
-
-    &-3,
-    &-4 {
-      @include tablet {
-        top: -6%;
-        left: unset;
-        right: 361px;
-      }
-      @include small-tablet {
-        top: 13%;
-        right: 60%;
-      }
-      @include mobile {
-        right: 63%;
-      }
-      @media (max-width: 500px) {
-        right: 65%;
-      }
-      @media (max-width: 420px) {
-        right: 74%;
-      }
-    }
+}
+@media (max-width: 576px) {
+  .hero__circle-1, .hero__circle-2, .hero__circle-5 {
+    right: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .hero__circle-1, .hero__circle-2, .hero__circle-5 {
+    right: 75%;
+  }
+}
+@media (max-width: 420px) {
+  .hero__circle-1, .hero__circle-2, .hero__circle-5 {
+    right: 87%;
+  }
+}
+@media (max-width: 1024px) {
+  .hero__circle-3, .hero__circle-4 {
+    top: -6%;
+    left: unset;
+    right: 361px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__circle-3, .hero__circle-4 {
+    top: 13%;
+    right: 60%;
+  }
+}
+@media (max-width: 576px) {
+  .hero__circle-3, .hero__circle-4 {
+    right: 63%;
+  }
+}
+@media (max-width: 500px) {
+  .hero__circle-3, .hero__circle-4 {
+    right: 65%;
+  }
+}
+@media (max-width: 420px) {
+  .hero__circle-3, .hero__circle-4 {
+    right: 74%;
   }
 }
 
+@-webkit-keyframes move {
+  100% {
+    offset-distance: 100%;
+  }
+}
 @keyframes move {
   100% {
     offset-distance: 100%;
   }
 }
-
+@-webkit-keyframes move2 {
+  100% {
+    offset-distance: 150%;
+  }
+}
 @keyframes move2 {
   100% {
     offset-distance: 150%;
   }
 }
-
+@-webkit-keyframes move3 {
+  100% {
+    offset-distance: 110%;
+  }
+}
 @keyframes move3 {
   100% {
     offset-distance: 110%;
   }
 }
-
+@-webkit-keyframes move4 {
+  100% {
+    offset-distance: 170%;
+  }
+}
 @keyframes move4 {
   100% {
     offset-distance: 170%;
+  }
+}
+@-webkit-keyframes move5 {
+  100% {
+    offset-distance: 130%;
   }
 }
 @keyframes move5 {

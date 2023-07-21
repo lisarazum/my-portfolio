@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+  @include('partials/page-blocks/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/page-blocks/ru.header.html')
+    <main class="main">
+      @include('partials/ru.hero.html')
+      @include('partials/ru.about.html')
+      @include('partials/ru.portfolio.html')
+      @include('partials/ru.smallprojects.html')
+      @include('partials/ru.contacts.html')
+    </main>
+    @include('partials/page-blocks/ru.footer.html')
+  </div>
+  <div class="overlay" data-menu-overlay></div>
+</body>
+
+</html>

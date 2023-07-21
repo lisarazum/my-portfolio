@@ -1,64 +1,70 @@
-<section class="section about blue-back" id="about">
+<section class="about" id="about">
   <div class="container">
-    <h2 class="title section__title _anim-items _anim-no-hide">Обо мне</h2>
+    <h2 class="title section-title about__section-title">Обо мне</h2>
+    <p class="paragraph about__paragraph">Я начинающий разработчик. Активно занимаюсь созданием сайтов больше года. Ищу новые, интересные проекты для пополнения портфолио.</p>
+    <p class="pargraph about__paragraph">Моя основная специализация - HTML-верстка.</p>
+    <p class="paragraph about__paragraph">HTML, CSS, JS и SCSS, создание одностраничных и многостраничных сайтов, с использованием различных плагинов, анимаций и других фич. Начинаю изучать React. Также, имею опыт установки сайта на Wordpress.</p>
+    <p class="paragraph about__paragraph">Переходите на мой <a href="https://github.com/lisarazum?tab=repositories" target="_blank">github</a>.</p>
     <div class="about__block">
-      <p class="paragraph about__paragraph _anim-items _anim-no-hide">Я начинающий разработчик. Активно занимаюсь созданием сайтов больше года. Ищу новые, интересные проекты для пополнения портфолио.</p>
-      <p class="paragraph about__paragraph about__paragraph-git _anim-items _anim-no-hide">Ссылка на github: 
-        <a href="https://github.com/lisarazum?tab=repositories" target="_blank">                
-        <svg>
-          <use xlink:href="img/svg/sprite.svg#git"></use>
-        </svg></a>
-      </p>
-      <h3 class="title about__work about__accordion-btn _anim-items _anim-no-hide">Опыт работы в IT</h3>
-
-      <h3 class="title about__accordion-title _anim-items _anim-no-hide">09/2022 - сейчас  |  HTML-верстальщик</h3>
-      <p class="paragraph about__paragraph _anim-items _anim-no-hide"><a href="https://www.pult.ru/" target="_blank" class="about__link">Pult.ru</a></p>
-      <p class="paragraph about__paragraph _anim-items _anim-no-hide">На данный момент, я работаю в компании <a href="https://www.pult.ru/" target="_blank" class="about__link">Pult.ru</a>. Моя основная задача создавать адаптивные и кроссбраузерные лендинги и страницы акций. Помимо этого я верстаю новые блоки для наших основных сайтов и другие фичи. Например: тултипы, слайдеры, табы итд. Хотя на самом деле моя главная задача разгрузить команду разработки от мелких задач :)</p>
-
-      <button class="btn about__accordion-btn _anim-items _anim-no-hide" id="aboutAccordion">
-        <h3 class="title about__work">
-          Мой не IT опыт:
-        </h3>
-        <span class="about__arrow"></span>
-      </button>
-      <div class="about__accordion-list">
-        <div class="about__accordion-item">
-          <h3 class="title about__accordion-title">09/2020 - 07/2022  |  Старший преподаватель Английского языка</h3>
-          <p class="paragraph about__paragraph"><a href="https://capitalsc.ru/" target="_blank" class="about__link">Capital School Center</a></p>
-          <p class="paragraph about__paragraph">Обязанности: преподавание Английского языка как для детей, так и для взрослых. За эти два года я смогла помочь детям полюбить английский так, как люблю его я. И вырасти от учителя английского языка до старшего преподавателя.</p>
-        </div>
-        
-        <div class="about__accordion-item">
-          <h3 class="title about__accordion-title">10/2019 - 07/2020  |  Менеджер ресторана</h3>
-          <p class="paragraph about__paragraph"><a href="https://www.parklanehotel.ru/" target="_blank" class="about__link">Parklane</a></p>
-          <p class="paragraph about__paragraph">Основная работа заключалась в управлении персоналом, командой до 20 человек, обслуживание мероприятий и обучение официантов.</p>
-        </div>
-        
-        <div class="about__accordion-item">
-          <h3 class="title about__accordion-title">06/2017 - 09/2018  |  Официант</h3>
-          <p class="paragraph about__paragraph"><a href="https://www.sprucepointinn.com/" target="_blank" class="about__link">Spruce Point Inn (the USA)</a></p>
-          <p class="paragraph about__paragraph">Работа проходила два лета подряд в 2017 и 2018 годах. Работа официантом на завтраках.</p>
-        </div>
-        
-        <div class="about__accordion-item">
-          <h3 class="title about__accordion-title">06/2017 - 09/2018  |  Помощник официанта</h3>
-          <p class="paragraph about__paragraph"><a href="https://boothbayharboroceansideresort.com/" target="_blank" class="about__link">Boothbay Harbor Oceanside Golf Resort (the USA)</a></p>
-          <p class="paragraph about__paragraph">Работа проходила два лета подряд в 2017 и 2018 годах. Обязанности: поддержка зала в чистоте, обслуживание посетителей, сервировка столов.</p>  
-        </div>
-      </div>
-
-      <h3 class="title about__work about__accordion-btn _anim-items _anim-no-hide">Мои основные скилы</h3>
-      <ul class="about__list _anim-items">
-        <li class="about__item">HTML</li>
-        <li class="about__item">CSS</li>
-        <li class="about__item">SCSS / Less</li>
-        <li class="about__item">JavaScript</li>
-        <li class="about__item">Gulp</li>
-        <li class="about__item">Git</li>
-        <li class="about__item">Bootstrap</li>
-        <li class="about__item">npm</li>
+      <h3 class="title about__title">Скилы</h3>
+      <ul class="list-reset about__list">
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/js.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/js.png" class="image" alt="Java Script">
+          </picture>
+          <span class="text">JavaScript</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/html.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/html.png" class="image" alt="HTML5">
+          </picture>
+          <span class="text">HTML5</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/css.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/css.png" class="image" alt="CSS3">
+          </picture>
+          <span class="text">CSS3</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/sass.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/sass.png" class="image" alt="SASS">
+          </picture>
+          <span class="text">SASS</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/git.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/git.png" class="image" alt="Git">
+          </picture>
+          <span class="text">Git</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/bootstrap.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/bootstrap.png" class="image" alt="Bootstrap">
+          </picture>
+          <span class="text">Bootstrap</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/figma.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/figma.png" class="image" alt="Figma">
+          </picture>
+          <span class="text">Figma</span>
+        </li>
+        <li class="about__item">
+          <picture>
+            <source srcset="./img/stack/vscode.webp" type="image/webp">
+            <img loading="lazy" src="./img/stack/vscode.png" class="image" alt="VSCode">
+          </picture>
+          <span class="text">VSCode</span>
+        </li>
       </ul>
-      <p class="paragraph about__paragraph _anim-items _anim-no-hide">В планах изучить React, чтобы была возможность работать над большими задачами.</p>
     </div>
   </div>
 </section>
